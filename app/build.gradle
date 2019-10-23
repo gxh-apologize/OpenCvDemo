@@ -11,7 +11,11 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
-                cppFlags "-frtti -fexceptions"
+                cppFlags ""
+                abiFilters 'armeabi-v7a'
+                //因为opencv 需要依赖 gnustl_static
+                // r18b的ndk gnustl_static被移除了，所以别用r18b以及高版本
+                arguments "-DANDROID_STL=gnustl_static"
             }
         }
     }
