@@ -136,6 +136,7 @@ Java_cn_gxh_opencvdemo_face_TraceHelper_postData(
             /**
              * 一行有多少像素  buffer.stride*4
              */
+            //使用这句是有问题的
 //            memcpy(buffer.bits,src.data,buffer.stride*buffer.height*4);
 
 
@@ -158,3 +159,5 @@ Java_cn_gxh_opencvdemo_face_TraceHelper_postData(
 
     env->ReleaseByteArrayElements(data_,data,0);
 }
+
+
